@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f5f7fa;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .task-input {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #24b24fd2;
+      color: white;
+      border: none;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #04851e;
+    }
+
+    .task-list {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .task {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .task.completed h3,
+    .task.completed p {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .task-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .task-buttons button {
+      flex: 1;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+
+  <div class="task-input">
+    <input type="text" id="taskTitle" placeholder="Task Title">
+    <textarea id="taskDesc" placeholder="Task Description"></textarea>
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <div class="task-list" id="taskList"></div>
+
+  <script>
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const taskList = document.getElementById('taskList');
+
+    addTaskBtn.addEventListener('click', () => {
+      const title = document.getElementById('taskTitle').value.trim();
+      const desc = document.getElementById('taskDesc').value.trim();
+
+      if (title === '' || desc === '') {
+        alert('Please enter both title and description.');
+        return;
+      }
+
+      const taskDiv = document.createElement('div');
+      taskDiv.className = 'task';
+
+      const titleElem = document.createElement('h3');
+      titleElem.textContent = title;
+
+      const descElem = document.createElement('p');
+      descElem.textContent = desc;
+
+      const btnContainer = document.createElement('div');
+      btnContainer.className = 'task-buttons';
+
+      const completeBtn = document.createElement('button');
+      completeBtn.textContent = 'Mark as Completed';
+
+      const editBtn = document.createElement('button');
+      editBtn.textContent = 'Edit';
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+
+      btnContainer.append(completeBtn, editBtn, deleteBtn);
+      taskDiv.append(titleElem, descElem, btnContainer);
+      taskList.appendChild(taskDiv);
+
+      // Clear input fields
+      document.getElementById('taskTitle').value = '';
+      document.getElementById('taskDesc').value = '';
+
+      // Complete toggle
+      completeBtn.addEventListener('click', () => {
+        taskDiv.classList.toggle('completed');
+        completeBtn.textContent = taskDiv.classList.contains('completed') 
+          ? 'Mark as Incomplete' 
+          : 'Mark as Completed';
+      });
+
+      // Delete task
+      deleteBtn.addEventListener('click', () => {
+        taskDiv.remove();
+      });
+
+      // Edit task
+      editBtn.addEventListener('click', () => {
+        if (editBtn.textContent === 'Edit') {
+          const titleInput = document.createElement('input');
+          titleInput.value = titleElem.textContent;
+
+          const descInput = document.createElement('textarea');
+          descInput.value = descElem.textContent;
+
+          taskDiv.replaceChild(titleInput, titleElem);
+          taskDiv.replaceChild(descInput, descElem);
+
+          editBtn.textContent = 'Save';
+        } else {
+          const newTitle = taskDiv.querySelector('input').value.trim();
+          const newDesc = taskDiv.querySelector('textarea').value.trim();
+
+          if (newTitle === '' || newDesc === '') {
+            alert('Please enter both title and description.');
+            return;
+          }
+
+          titleElem.textContent = newTitle;
+          descElem.textContent = newDesc;
+
+          const titleInput = taskDiv.querySelector('input');
+          const descInput = taskDiv.querySelector('textarea');
+
+          taskDiv.replaceChild(titleElem, titleInput);
+          taskDiv.replaceChild(descElem, descInput);
+
+          editBtn.textContent = 'Edit';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
