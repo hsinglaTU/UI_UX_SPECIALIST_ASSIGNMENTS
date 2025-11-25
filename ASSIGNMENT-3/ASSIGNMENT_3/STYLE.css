@@ -1,0 +1,139 @@
+nav{
+    text-align: right;
+    background-color: rgba(7, 6, 32, 0.811);
+    height: 50px;
+    padding-top: 2%;
+    padding-right: 2%;
+    margin-left: 63%;
+    color: rgb(255, 255, 255);
+    border-style:inherit;
+    word-spacing: 2cap;
+}
+nav a{
+    color: white;
+}
+header{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-image: url(https://images.pexels.com/photos/360912/pexels-photo-360912.jpeg);
+    justify-content: center;
+    text-shadow: 1px 1px 4px rgb(0, 0, 0);
+    font:  1.5em Arial;
+}
+body{
+    background-color: rgba(183, 239, 239, 0.603);
+    font: calibri;
+    color: rgb(7, 6, 32);
+}
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  background-color: white;
+}
+
+th {
+  background-color: #070522;
+  color: white;
+  text-transform: uppercase;
+}
+
+
+.day-cell {
+  background-color: #203a43;
+  color: white;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.form-container {
+  width: 50%;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #071726;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.checkbox-group {
+  margin-bottom: 20px;
+}
+
+.checkbox-group label {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.note {
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #04071b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background: #16a085;
+}
+
+label {
+  display: block;      
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;      
+}
+
