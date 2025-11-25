@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CONTACT US</title>
+    <link rel="stylesheet" href="STYLE.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1> TROOPS TRAVELS </h1>
+        <h2>CONTACT US</h2>
+        <nav>
+            <a href="HOMEPAGE.html">Home</a>
+            <a href="PACKAGES.html">Packages</a>
+            <a href="BOOKING.html">Bookings</a>
+            <a href="GALLERY.html">Gallery</a>
+            <a href="CONTACT.html">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <p>Phone: 9999999999</p>
+        <p>Email: <a href="mailto:info@troops.com">info@troops.com</a></p>
+        <p>Hours: Mon - Sat: 9 AM - 6 PM</p>
+    </main>
+
+    <script>
+        let links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+            if (link.href.includes("CONTACT.html")) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>

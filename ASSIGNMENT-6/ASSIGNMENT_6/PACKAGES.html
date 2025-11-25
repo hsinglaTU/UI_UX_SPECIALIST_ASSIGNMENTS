@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PACKAGES</title>
+    <link rel="stylesheet" href="STYLE.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>TROOPS TRAVELS</h1>
+        <h2>PACKAGES</h2>
+        <nav>
+            <a href="HOMEPAGE.html">Home</a>
+            <a href="PACKAGES.html">Packages</a>
+            <a href="BOOKING.html">Booking</a>
+            <a href="GALLERY.html">Gallery</a>
+            <a href="CONTACT.html">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <center>
+        <table id="packageTable">
+            <tr>
+                <th>PACKAGES</th>
+                <th>DESTINATION</th>
+                <th>DURATION</th>
+                <th>BASE PRICE</th>
+                <th>SEASON</th>
+                <th>FINAL PRICE</th>
+            </tr>
+        </table>
+        </center>
+    </main>
+
+    <script>
+        let packages = [
+            {id: 1, name: "ENCHANTED NIGHTS", destination: "Singapore", duration: "4N/5D", basePrice: 52953, season: "High"},
+            {id: 2, name: "CULTURAL PARADISE", destination: "Bali", duration: "6N/7D", basePrice: 22875, season: "Low"},
+            {id: 3, name: "RISING SUN", destination: "Japan", duration: "5N/6D", basePrice: 131669, season: "High"},
+            {id: 4, name: "EUROPEAN TRAIL", destination: "Paris", duration: "3N/4D", basePrice: 136603, season: "Mid"},
+            {id: 5, name: "BEACHY WAVES", destination: "Goa", duration: "3N/4D", basePrice: 49999, season: "Low"}
+        ];
+
+        function calculateFinalPrice(pkg) {
+            let price = pkg.basePrice;
+            switch(pkg.season) {
+                case "High":
+                    price *= 1.2; // 20% more
+                    break;
+                case "Mid":
+                    price *= 1.1; // 10% more
+                    break;
+                case "Low":
+                    price *= 0.9; // 10% discount
+                    break;
+            }
+            return Math.round(price);
+        }
+
+        let table = document.getElementById("packageTable");
+        packages.forEach(pkg => {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${pkg.name}</td>
+                <td>${pkg.destination}</td>
+                <td>${pkg.duration}</td>
+                <td>${pkg.basePrice}</td>
+                <td>${pkg.season}</td>
+                <td>${calculateFinalPrice(pkg)}</td>
+            `;
+            table.appendChild(row);
+        });
+
+        let links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+            if (link.href.includes("PACKAGES.html")) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>
