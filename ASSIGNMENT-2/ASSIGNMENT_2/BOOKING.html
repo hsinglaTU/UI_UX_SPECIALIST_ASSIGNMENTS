@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOKING</title>
+        <link rel="stylesheet" href="STYLE.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1> TROOPS TRAVELS </h1>
+            <h2>BOOKINGS</h2>
+            <nav>
+                <a href="HOMEPAGE.html">Home</a>
+                <a href="PACKAGES.html">Packages</a>
+                <a href="GALLERY.html">Gallery</a>
+                <a href="CONTACT.html">Contact Us</a>
+            </nav>
+        </header>
+        <main>
+          <h2>BOOK YOUR TRIP</h2>
+<form>
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="from">Departure</label>
+  <input type="date" id="from" name="from" required>
+  <label for="to">Arrival</label>
+  <input type="date" id="to" name="to" required>
+  <label for="destination">Destination</label>
+  <select id="destination" name="destination" required>
+    <option value="">-- Select Destination --</option>
+    <option value="paris">Paris</option>
+    <option value="bali">Bali</option>
+    <option value="singapore">Singapore</option>
+    <option value="goa">Goa</option>
+    <option value="japan">Japan</option>
+  </select>
+  <button type="submit">Book Now</button>
+</form>
+  
+        </main>
+    </body>
