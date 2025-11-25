@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(192, 236, 232);
+        }
+        h1 {
+            text-align: center;
+        }
+        nav {
+            background-color: #45ac9f;
+            padding: 5px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        img {
+            margin-top: 10px;
+        }
+        mark {
+        background-color: rgb(43, 175, 149);
+        color: black;
+        }
+        a {
+            color: rgb(8, 58, 63);         
+        }
+        a:visited {
+            color: purple;       
+        }
+        a:hover {
+            color: rgb(3, 29, 31);          
+        }
+        a:active {
+            color: orange;       
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <h1>HARIDI SINGLA</h1>
+    <h3 style="text-align:center;"><em>Web Development Learner</em></h3>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#hard skills">Hard Skills</a>
+        <a href="#soft skills">Soft Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <h2 id="about">About Me</h2>
+    <p>Hello! My name is <b>Haridi Singla</b>. I am <i>passionate</i> about creating websites and <u>learning</u> new skills. I believe in <strong>hard work</strong> and <mark>continuous learning</mark>.</p>
+    <img src="data:image/png;base64,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" width="200" height="200" alt="My Photo" title="Haridi Singla">
+
+    <h2 id="education">Education</h2>
+    <table>
+        <tr>
+            <th>Degree</th>
+            <th>Institution</th>
+            <th>Year</th>
+            <th>CGPA</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td>Bachelor in Engineering</td>
+            <td>Thapar Institute of Engineering and Technology</td>
+            <td>2027</td>
+            <td>9.07</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Higher Secondary Education</td>
+            <td>Scholar Fields Public School</td>
+            <td>2022</td>
+            <td>-</td>
+            <td>84</td>
+        </tr>
+        <tr>
+            <td>Matriculation</td>
+            <td>The British Co-Ed High School</td>
+            <td>2020</td>
+            <td>-</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+    <h2 id="hard skills">Hard Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>DSA</li>
+        <li>DBMS</li>
+    </ul>
+    <h2 id="soft skills">Soft Skills</h2>
+    <ul>
+        <li>Problem Solving</li>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+    </ul>
+    <h2 id="projects">Projects</h2>
+    <h3>Portfolio Website</h3>
+    <p>An HTML and CSS based my portfolio webpage.</p>
+    <img src="file:///C:/Users/hp/Desktop/OneDrive/Pictures/profile1.png" width="400" height="200" alt="My Portfolio" title="My Portfolio">
+    <img src="file:///C:/Users/hp/Desktop/OneDrive/Pictures/profile2.png" width="400" height="200" alt="My Portfolio" title="My Portfolio">
+    <img src="file:///C:/Users/hp/Desktop/OneDrive/Pictures/profile3.png" width="400" height="200" alt="My Portfolio" title="My Portfolio">
+    <h2 id="contact">Contact</h2>
+    <p>Email: <a href="mailto:hsingla_be23@thapar.edu.com">hsingla_be23@thapar.edu.com</a></p>
+    <p>
+        LinkedIn: <a href="https://www.linkedin.com/in/haridi-singla" target="_blank">https://www.linkedin.com/in/haridi-singla</a>
+    </p>
+
+    <footer>
+        Made by Haridi Singla
+    </footer>
+
+</body>
+</html>
