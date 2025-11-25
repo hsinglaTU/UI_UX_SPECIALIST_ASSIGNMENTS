@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment - 5</title>
+</head>
+<body>
+  <h2>i. Sum, Difference, Product, Quotient</h2>
+  <button onclick="calculate()">Enter Numbers</button>
+  <div id="calcResult"></div>
+  <hr>
+
+  <h2>ii. Array Operations</h2>
+  <div id="arrayResult"></div>
+  <hr>
+
+  <h2>iii. Form Validation</h2>
+  <form id="myForm">
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    Age: <input type="text" id="age"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <hr>
+
+  <h2>iv. Student Object</h2>
+  <div id="studentResult"></div>
+  <hr>
+
+  <h2>v. Array with map(), filter(), reduce()</h2>
+  <div id="arrayMethodsResult"></div>
+
+  <script>
+    // i. Numbers calculation
+    function calculate() {
+      let num1 = parseFloat(prompt("Enter first number:"));
+      let num2 = parseFloat(prompt("Enter second number:"));
+      document.getElementById("calcResult").innerHTML =
+        "Sum: " + (num1 + num2) + "<br>" +
+        "Difference: " + (num1 - num2) + "<br>" +
+        "Product: " + (num1 * num2) + "<br>" +
+        "Quotient: " + (num1 / num2) + "<br>";
+    }
+
+    // ii. Array operations
+    let arr = [12, 5, 34, 7, 19];
+    let largest = Math.max(...arr);
+    let smallest = Math.min(...arr);
+    let ascending = [...arr].sort((a, b) => a - b);
+    let descending = [...arr].sort((a, b) => b - a);
+    document.getElementById("arrayResult").innerHTML =
+      "Array: " + arr + "<br>" +
+      "Largest: " + largest + "<br>" +
+      "Smallest: " + smallest + "<br>" +
+      "Ascending: " + ascending + "<br>" +
+      "Descending: " + descending + "<br>";
+
+    // iii. Form Validation
+    document.getElementById("myForm").onsubmit = function(event) {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let age = parseInt(document.getElementById("age").value);
+
+      if (name === "") {
+        alert("Name cannot be empty!");
+        event.preventDefault();
+      } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        alert("Invalid email format!");
+        event.preventDefault();
+      } else if (isNaN(age) || age < 18 || age > 100) {
+        alert("Age must be between 18 and 100!");
+        event.preventDefault();
+      }
+    }
+
+    // iv. Student Object
+    let student = {
+      name: "John",
+      age: 20,
+      grades: "B"
+    };
+    student.class = "10th";     // Add new property
+    student.grades = "A";       // Update grade
+    let studentInfo = "";
+    for (let key in student) {
+      studentInfo += key + ": " + student[key] + "<br>";
+    }
+    document.getElementById("studentResult").innerHTML = studentInfo;
+
+    // v. Array Methods
+    function processArray(arr) {
+      return arr
+        .filter(num => num % 2 === 0)   // Remove odd numbers
+        .map(num => num * 2)            // Multiply remaining by 2
+        .reduce((sum, num) => sum + num, 0); // Sum
+    }
+    let numbers = [1, 2, 3, 4, 5, 6];
+    document.getElementById("arrayMethodsResult").innerHTML =
+      "Original Array: " + numbers + "<br>" +
+      "Result: " + processArray(numbers);
+  </script>
+</body>
+</html>
